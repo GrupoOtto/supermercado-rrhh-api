@@ -91,6 +91,7 @@ PATCH   | Apply a partial update to an object                                   
     | `firstname` | `String`   | ✔        | The surname of the employee.        |
     | `lastname`  | `String`   | ✔        | The lastname of the employee.       |
     | `email`     | `String`   | ✔        | The e-mail address of the employee. |
+    | `password`  | `String`   | ✔        | The plain password of the employee. |
     | `type`      | `ObjectID` |          | The reference of employee's type.   |
 
 - `/{id}`
@@ -106,6 +107,7 @@ PATCH   | Apply a partial update to an object                                   
     | `firstname` | `String`   | ✔        | The surname of the employee.        |
     | `lastname`  | `String`   | ✔        | The lastname of the employee.       |
     | `email`     | `String`   | ✔        | The e-mail address of the employee. |
+    | `password`  | `String`   | ✔        | The plain password of the employee. |
     | `type`      | `ObjectID` |          | The reference of employee's type.   |
 
   - `PATCH : Employee`
@@ -117,6 +119,7 @@ PATCH   | Apply a partial update to an object                                   
     | `firstname` | `String`   |          | The surname of the employee.        |
     | `lastname`  | `String`   |          | The lastname of the employee.       |
     | `email`     | `String`   |          | The e-mail address of the employee. |
+    | `password`  | `String`   |          | The plain password of the employee. |
     | `type`      | `ObjectID` |          | The reference of employee's type.   |
 
   - `DELETE : Employee`
