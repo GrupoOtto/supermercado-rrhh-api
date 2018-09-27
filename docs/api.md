@@ -1,8 +1,8 @@
 # API REST Specification
 
-## Schemas
+## 1 Schemas
 
-### Errors
+### 1.1 Errors
 
 #### Error : `Object`
 
@@ -11,7 +11,7 @@
 | `status`  | `Number` | ✔        | One of a server-defined set of error codes.   |
 | `message` | `String` | ✔        | A human-readable representation of the error. |
 
-### References
+### 1.2 References
 
 #### ObjectId : `Hexadecimal`
 
@@ -33,7 +33,7 @@
 | `email`     | `String`   | ✔        | The e-mail address of the employee.        |
 | `type`      | `TypeRef`  |          | The type of employee its refer.            |
 
-### Queries
+### 1.3 Queries
 
 #### Likeable : `Object`
 
@@ -54,7 +54,7 @@
 
 #### QueryString : `(String | Likeable)`
 
-## Supported Methods
+## 2 Supported Methods
 
 Method  | Description                                                                                                                | Is Idempotent
 ------- | -------------------------------------------------------------------------------------------------------------------------- | -------------
@@ -65,7 +65,7 @@ POST    | Create a new object based on the data provided, or submit a command   
 HEAD    | Return metadata of an object for a GET response. Resources that support the GET method MAY support the HEAD method as well | True
 PATCH   | Apply a partial update to an object                                                                                        | False
 
-## Endpoints
+## 3 Endpoints
 
 - `/`
 
