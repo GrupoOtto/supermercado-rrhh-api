@@ -1,0 +1,41 @@
+#%RAML 1.0
+title: Supermarked Employees API
+baseUri: example.com/employees
+version: v0.1
+mediaType:  application/json
+
+types:
+  EmployeeType:
+    properties:
+      initials: string
+      description: string
+  Employee:
+    properties:
+      firstname: string
+      lastname: string
+      email: string
+      password?: string
+      type: EmployeeType
+  Likeable:
+    type: object
+    properties:
+      $regex: string
+  QueryString: (string | Likeable)
+
+/ :
+  get:
+    displayName: Get employees
+    description: Returns a group of employees that match a query
+    responses:
+      200:
+        body:
+          type: Employee[]
+    queryParameters:
+      firstname:
+        description: Filter by firstname
+        type: QueryString
+      lastname:
+        description: Filter by lastname
+        type: QueryString
+      email: QueryString
+      type: string
