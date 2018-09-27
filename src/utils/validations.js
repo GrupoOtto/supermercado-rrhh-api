@@ -10,11 +10,14 @@ exports.numberSchema = [
     $lte: Joi.number()
   })
   .or('$gt', '$gte', '$lt', '$lte')
+  .unknown(false)
 ];
 
 exports.stringSchema = [
   Joi.string(),
-  Joi.object().keys({
+  Joi.object()
+  .keys({
     $regex: Joi.string()
   })
+  .unknown(false)
 ];

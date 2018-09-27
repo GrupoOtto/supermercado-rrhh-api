@@ -5,17 +5,17 @@ const {
 } = require('../utils/validations');
 
 exports.all = {
-  query: {
+  query: Joi.object({
     firstname: stringSchema,
     lastname: stringSchema,
     email: numberSchema,
     type: Joi.string()
       .hex()
-  }
+  }).unknown(false)
 };
 
 exports.create = {
-  body: {
+  body: Joi.object({
     firstname: Joi.string().required(),
     lastname: Joi.string().required(),
     email: Joi.string().required(),
@@ -23,13 +23,20 @@ exports.create = {
     type: Joi.string()
       .hex()
       .required()
+  }).unknown(false)
+};
+
+exports.get = {
+  params: {
+    id: Joi.string().hex()
   }
 };
 
-exports.get = {};
-
 exports.update = {
-  body: {
+  params: {
+    id: Joi.string().hex()
+  },
+  body: Joi.object({
     firstname: Joi.string().required(),
     lastname: Joi.string().required(),
     email: Joi.string().required(),
@@ -37,17 +44,24 @@ exports.update = {
     type: Joi.string()
       .hex()
       .required()
-  }
+  }).unknown(false)
 };
 
 exports.patch = {
-  body: {
+  params: {
+    id: Joi.string().hex()
+  },
+  body: Joi.object({
     firstname: Joi.string(),
     lastname: Joi.string(),
     email: Joi.string(),
     password: Joi.string(),
     type: Joi.string().hex()
-  }
+  }).unknown(false)
 };
 
-exports.delete = {};
+exports.delete = {
+  params: {
+    id: Joi.string().hex()
+  }
+};

@@ -4,33 +4,33 @@ const {
 } = require('../utils/validations');
 
 exports.all = {
-  query: {
+  query: Joi.object({
     initials: stringSchema,
     description: stringSchema,
-  }
+  }).unknown(false)
 };
 
 exports.create = {
-  body: {
+  body: Joi.object({
     initials: Joi.string().required(),
     description: Joi.string().required()
-  }
+  }).unknown(false)
 };
 
 exports.get = {};
 
 exports.update = {
-  body: {
+  body: Joi.object({
     initials: Joi.string().required(),
     description: Joi.string().required()
-  }
+  }).unknown(false)
 };
 
 exports.patch = {
-  body: {
+  body: Joi.object({
     initials: Joi.string(),
     description: Joi.string()
-  }
+  }).unknown(false)
 };
 
 exports.delete = {};
