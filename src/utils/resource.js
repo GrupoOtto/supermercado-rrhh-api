@@ -1,4 +1,5 @@
 const status = require('http-status');
+const errors = require('http-errors')
 const validate = require('express-validation');
 const path = require('path');
 
@@ -26,7 +27,10 @@ module.exports = app => (base, controller, validator) => {
     validate(validator.get),
     handle(async (req, res) => {
       const { id } = req.params;
-      res.status(status.OK).json(await controller.get(id));
+      const resp = await controller.get(id);
+      if(!resp)
+        throw errors(404, "Resource not found!");
+      res.status(status.OK).json(resp);
     })
   );
 
