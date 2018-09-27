@@ -46,7 +46,7 @@
 | Property | Type     | Required | Description                     |
 | -------- | -------- | -------- | ------------------------------- |
 | `$gt`    | `Number` |          | An upper bound number.          |
-| `$gte`   | `Number` |          | An upper bound or ecual number. |
+| `$gte`   | `Number` |          | An upper bound or equal number. |
 | `$lt`    | `Number` |          | A lower bound number.           |
 | `$lte`   | `Number` |          | A lower bound or equal number.  |
 
