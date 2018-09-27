@@ -17,9 +17,15 @@ app.use(morgan('tiny'));
 
 api(app);
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500).json(err);
-  throw err;
+app.use((error, req, res, next) => {
+  res
+    .status(error.status || 500)
+    .json({
+      ... error,
+      status: error.status || 500,
+      message: error.message || 'Server error',
+    });
+    throw error;
 });
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
