@@ -14,4 +14,4 @@ exports.update = async (_id, args) => {
 
 exports.delete = async _id => Employee.deleteOne({ _id });
 
-exports.create = async args => Employee.create(args).select('-password');
+exports.create = async args => Employee.create(args);
