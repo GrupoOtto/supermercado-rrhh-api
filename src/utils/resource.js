@@ -1,5 +1,5 @@
 const status = require('http-status');
-const errors = require('http-errors')
+const errors = require('http-errors');
 const validate = require('express-validation');
 const path = require('path');
 
