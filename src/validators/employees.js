@@ -8,7 +8,7 @@ exports.all = {
   query: Joi.object({
     firstname: stringSchema,
     lastname: stringSchema,
-    email: numberSchema,
+    email: stringSchema,
     type: Joi.string()
       .hex()
   }).unknown(false)
