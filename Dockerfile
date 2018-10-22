@@ -16,6 +16,6 @@ RUN npm install -g nodemon cross-env eslint npm-run-all node-gyp node-pre-gyp \
 
 COPY . .
 
-EXPOSE 8080
+EXPOSE 3000
 
 CMD ["npm", "start"]
