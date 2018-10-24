@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const TypeSchema = new mongoose.Schema({
   initials: {
     type: String,
-    required: true
+    required: true,
+    unique: true,
   },
   description: {
     type: String,
