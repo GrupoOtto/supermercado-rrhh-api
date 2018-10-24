@@ -6,6 +6,6 @@ exports.create = async args => Type.create(args);
 
 exports.get = async _id => Type.findById({ _id }).populate('type');
 
-exports.update = async (_id, args) => Type.findOneAndUpdate({ _id }, args);
+exports.update = async (_id, args) => Type.findOneAndUpdate({ _id }, args, { new: true });
 
 exports.delete = async _id => Type.deleteOne({ _id });
